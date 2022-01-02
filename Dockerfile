@@ -12,10 +12,10 @@ RUN apt-get update && \
 
 FROM base AS prime
 ARG TAGS
-RUN addgroup --gid 1000 theprimeagen
-RUN adduser --gecos theprimeagen --uid 1000 --gid 1000 --disabled-password theprimeagen
-USER theprimeagen
-WORKDIR /home/theprimeagen
+RUN addgroup --gid 1000 sbenard
+RUN adduser --gecos sbenard --uid 1000 --gid 1000 --disabled-password sbenard
+USER sbenard
+WORKDIR /home/sbenard
 
 FROM prime
 COPY . .

@@ -1,5 +1,6 @@
 - hosts: localhost
   become: true
   tasks:
-  - name: Install zsh
-    apt: name=zsh
+  - include: tasks/zsh.yml
+  - include: tasks/node.yml
+  - include: tasks/npm-packages.yml
