@@ -10,14 +10,9 @@ RUN apt-get update && \
     apt-get clean autoclean && \
     apt-get autoremove --yes
 
-FROM base AS prime
-ARG TAGS
-RUN addgroup --gid 1000 sbenard
-RUN adduser --gecos sbenard --uid 1000 --gid 1000 --disabled-password sbenard
-USER sbenard
-WORKDIR /home/sbenard
+USER root
+WORKDIR /root
 
-FROM prime
 COPY . .
-CMD ["sh", "-c", "ansible-playbook $TAGS local.yml"]
+CMD ["sh", "-c", "ansible-playbook $TAGS main.yml"]
 
