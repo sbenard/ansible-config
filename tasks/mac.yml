@@ -1,0 +1,15 @@
+- name: Install alfred
+  community.general.homebrew_cask:
+    name: alfred
+    state: present
+  tags:
+    - brew
+    - mac
+- name: Install VSCode
+  homebrew_cask:
+    name: "{{ vscode }}"
+    state: present
+    install_options: force
+  tags:
+    - brew
+    - mac

@@ -20,3 +20,6 @@
   - include: tasks/npm-packages.yml
   - include: tasks/program.yml
   - include: tasks/dotfiles.yml
+  - include: tasks/mac.yml
+    when: ansible_distribution == 'MacOSX'
+
